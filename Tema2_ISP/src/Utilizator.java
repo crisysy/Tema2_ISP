@@ -43,7 +43,7 @@ public class Utilizator {
 	}
 	
 	public void aparticipa(Eveniment event) {
-		//nush ce face asta
+		//rngcdtngjunjd
 	}
 	
 	public void anuleazaParicipare(Eveniment event) {
