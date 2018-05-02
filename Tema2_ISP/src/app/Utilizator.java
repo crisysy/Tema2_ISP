@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Utilizator {
 	String nume;
 	Date dataNasterii;
+	String ultimulMesaj = "";
 	ArrayList<TipEveniment> preferinte = new ArrayList<TipEveniment>();
 	ArrayList<Eveniment> listaEvenimente = new ArrayList<Eveniment>();
 	ArrayList<Utilizator> listaPrieteni = new ArrayList<Utilizator>();
@@ -12,6 +13,21 @@ public class Utilizator {
 	ArrayList<CererePrietenie> listaCereri = new ArrayList<CererePrietenie>();
 	ArrayList<Rezervare> listaRezervari = new ArrayList<Rezervare>();
 	
+	
+	
+	
+	
+	public String getUltimulMesaj() {
+		return ultimulMesaj;
+	}
+
+
+
+	public Utilizator(String nume) {
+		super();
+		this.nume = nume;
+	}
+
 	//----------------------------------------------------
 	
 	//metoda lui Andrei
@@ -56,21 +72,38 @@ public class Utilizator {
 					this.adaugaEveniment(event);
 					Rezervare rezervare = new Rezervare (this, event);
 					this.listaRezervari.add(rezervare);
+					event.locuriDisponibile--;
 					
 					
 					
 				}
-				else System.out.println("Nu mai sunt locuri disponibile.");
+				else {
+					this.ultimulMesaj="Nu mai sunt locuri disponibile.";
+					System.out.println(ultimulMesaj);
+				}
+					
 					
 			}
 			else
 				this.adaugaEveniment(event);
 		}
-		else System.out.println("Evenimentul nu este Activ.");
+		else {
+			this.ultimulMesaj="Evenimentul nu mai este Activ.";
+			System.out.println(ultimulMesaj);
+		}
 	}
 	
+	public boolean contineEveniment (Eveniment event)
+	{
+		if (listaEvenimente.contains(event))
+			return true;
+		else
+			return false;
+	}
+	
+	
 	public void anuleazaParicipare(Eveniment event) {
-		//adica sa stearga din lista de evenimente? ca nu mai stiu
+
 		for (int i=0;i<this.listaEvenimente.size();i++) {
 			if (this.listaEvenimente.get(i).equals(event)) {
 				this.listaEvenimente.remove(i);
