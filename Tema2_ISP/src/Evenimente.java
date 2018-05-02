@@ -11,6 +11,8 @@ public class Evenimente {
 	
 	public void recomandare(Utilizator user) {
 		//de implementat, ca nu stiu ce face
+		// Cauta utilizatori care au tipul evenimetului la interese si le recomanda evenimentul. 
+		//Cred ca putem omite implementarea pentru moment daca nu o foloseste nimeni... -Cristina
 	}
 	
 	public Eveniment cautaEveniment(String nume) {
