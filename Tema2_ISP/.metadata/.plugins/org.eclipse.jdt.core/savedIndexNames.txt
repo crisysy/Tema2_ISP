@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+D:\Facultate\An 3\Sem 2\ISP\Laborator 6 - recapitulare\Tema 2\Tema2_ISP\Tema2_ISP\.metadata\.plugins\org.eclipse.jdt.core

@@ -42,8 +42,8 @@ public class Utilizator {
 		System.out.println("Preferinte: " + this.preferinte);
 	}
 	
-	public void aparticipa(Eveniment event) {
-		//nush ce face asta
+	public void participa(Eveniment event) {
+		
 	}
 	
 	public void anuleazaParicipare(Eveniment event) {
