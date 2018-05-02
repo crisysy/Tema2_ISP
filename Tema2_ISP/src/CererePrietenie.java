@@ -11,5 +11,6 @@ public class CererePrietenie {
 	
 	public void dispareCerere() {
 		//nu se poate sterge un obiect din interiorul clasei
+		// Atunci mutam metoda asta la utilizator, nu? - Cristina
 	}
 }
