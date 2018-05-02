@@ -9,6 +9,7 @@ public class Utilizator {
 	ArrayList<Utilizator> listaPrieteni = new ArrayList<Utilizator>();
 	ArrayList<Eveniment> listaSugestii = new ArrayList<Eveniment>();
 	ArrayList<CererePrietenie> listaCereri = new ArrayList<CererePrietenie>();
+	ArrayList<Rezervare> listaRezervari = new ArrayList<Rezervare>();
 	
 	//----------------------------------------------------
 	
@@ -42,8 +43,29 @@ public class Utilizator {
 		System.out.println("Preferinte: " + this.preferinte);
 	}
 	
-	public void aparticipa(Eveniment event) {
-		//rngcdtngjunjd
+	//Cristina Pavel \/
+	
+	public void participa(Eveniment event) {
+		if(event.stareCurenta == StareEveniment.Activ )
+		{
+			if(event.rezervare)
+			{
+				if(event.verificaDisponibilitate())
+				{
+					this.adaugaEveniment(event);
+					Rezervare rezervare = new Rezervare (this, event);
+					this.listaRezervari.add(rezervare);
+					
+					
+					
+				}
+				else System.out.println("Nu mai sunt locuri disponibile.");
+					
+			}
+			else
+				this.adaugaEveniment(event);
+		}
+		else System.out.println("Evenimentul nu este Activ.");
 	}
 	
 	public void anuleazaParicipare(Eveniment event) {
