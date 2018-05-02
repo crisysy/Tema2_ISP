@@ -8,10 +8,12 @@ public class Eveniment {
 	int locuriDisponibile;
 	StareEveniment stareCurenta;
 	boolean rezervare; //ce e cu asta?
+			   // Sunt evenimente pentru care e necesara rezervarea unui loc => rezervare=True daca da si False daca nu. - Cristina
 	
 	//---------------------------------------------------
 	
 	//care-i rostul asteia?!
+	// Daca nu sunt locuri, sa apara un mesaj ca omul sa stie ca nu mai poate sa mearga. - Cristina
 	public boolean verificaDisponibilitate() {
 		if (this.locuriDisponibile>0) {
 			return true;
