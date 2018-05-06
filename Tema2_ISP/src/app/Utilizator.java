@@ -13,22 +13,24 @@ public class Utilizator {
 	ArrayList<CererePrietenie> listaCereri = new ArrayList<CererePrietenie>();
 	ArrayList<Rezervare> listaRezervari = new ArrayList<Rezervare>();
 	
-	
-	
-	
+	//----------------------------------------------------
 	
 	public String getUltimulMesaj() {
 		return ultimulMesaj;
 	}
 
-
-
 	public Utilizator(String nume) {
 		super();
 		this.nume = nume;
 	}
-
-	//----------------------------------------------------
+	
+	public Utilizator getUltimulPrieten() {
+		return this.listaPrieteni.get(this.listaPrieteni.size()-1);
+	}
+	
+	public ArrayList<Utilizator> getListaPrieteni(){
+		return this.listaPrieteni;
+	}
 	
 	//metoda lui Andrei
 	//nu va atingeti de ea
@@ -36,7 +38,7 @@ public class Utilizator {
 		if (raspuns) {
 			cerere.expeditor.listaPrieteni.add(cerere.destinatar);
 			cerere.destinatar.listaPrieteni.add(cerere.expeditor);
-			cerere = null;
+			
 		} else {
 			cerere = null;
 		}
