@@ -72,17 +72,12 @@ public class Utilizator {
 					this.adaugaEveniment(event);
 					Rezervare rezervare = new Rezervare (this, event);
 					this.listaRezervari.add(rezervare);
-					event.locuriDisponibile--;
-					
-					
-					
+					event.locuriDisponibile--;	
 				}
 				else {
 					this.ultimulMesaj="Nu mai sunt locuri disponibile.";
 					System.out.println(ultimulMesaj);
-				}
-					
-					
+				}					
 			}
 			else
 				this.adaugaEveniment(event);
